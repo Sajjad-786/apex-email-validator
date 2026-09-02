@@ -1,0 +1,297 @@
+/* ======================================================================
+   S&H Software Solutions
+   Email Validator - Oracle APEX Item Plugin
+   ----------------------------------------------------------------------
+   Component : Stylesheet
+   Version   : 3.2.0
+   Date      : 2026-08-01
+   Author    : S&H Software Solutions
+   License   : MIT License. This code is free and open to use, modify,
+               and redistribute, with or without attribution, for
+               personal or commercial projects.
+   ----------------------------------------------------------------------
+   All icons are pure CSS (no icon-font dependency).
+   ====================================================================== */
+
+.sh-eml-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* Stretch: mirror the standard APEX "Stretch" item width behavior */
+.t-Form-fieldContainer--stretchInputs .sh-eml-wrapper {
+  display: block;
+  width: 100%;
+}
+
+.t-Form-fieldContainer--stretchInputs .sh-eml-wrapper .sh-eml-input {
+  width: 100%;
+}
+
+.sh-eml-input.sh-eml-invalid {
+  border-color: #c43636 !important;
+  box-shadow: 0 0 0 1px #c43636 !important;
+}
+
+/* -------------------- Popover (body-attached portal) ------------------- */
+.sh-eml-popover {
+  display: none;
+  position: fixed;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.08);
+  padding: 12px 14px;
+  z-index: 99999;
+}
+
+.sh-eml-popover.sh-eml-popover-open {
+  display: block;
+}
+
+.sh-eml-popover-title {
+  display: block;
+  font-size: 12px;
+  color: #888780;
+  margin-bottom: 8px;
+}
+
+.sh-eml-rule-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* -------------------- Error rows --------------------------------------- */
+.sh-eml-error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #a32d2d;
+}
+
+.sh-eml-error-icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #c43636;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.sh-eml-error-icon::before,
+.sh-eml-error-icon::after {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 4px;
+  width: 2px;
+  height: 8px;
+  background: #ffffff;
+  border-radius: 1px;
+}
+
+.sh-eml-error-icon::before { transform: rotate(45deg); }
+.sh-eml-error-icon::after  { transform: rotate(-45deg); }
+
+/* -------------------- Success row -------------------------------------- */
+.sh-eml-success {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #3b6d11;
+}
+
+.sh-eml-success-icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #639922;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.sh-eml-success-icon::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 4px;
+  height: 8px;
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* -------------------- Neutral row -------------------------------------- */
+.sh-eml-neutral {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #888780;
+}
+
+/* -------------------- Info notices ------------------------------------- */
+.sh-eml-notice-list {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.sh-eml-notice-list.sh-eml-has-notices {
+  display: flex;
+}
+
+.sh-eml-notice {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #0c447c;
+}
+
+.sh-eml-notice-icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #185fa5;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.sh-eml-notice-icon::after {
+  content: "i";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  font-style: normal;
+  font-family: Georgia, serif;
+}
+
+/* -------------------- Blocked button ----------------------------------- */
+.sh-eml-btn-blocked {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Reason box shown when hovering the blocked button. Positioned
+   absolutely so it floats above the content below instead of pushing
+   it down - otherwise the whole form shifts on every hover. */
+.sh-eml-btn-hint {
+  display: none;
+  position: fixed;
+  z-index: 99999;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  box-sizing: border-box;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #8c2020;
+  background: #fdeaea;
+  border: 1px solid #f2c4c4;
+  border-left: 3px solid #c43636;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.sh-eml-btn-hint.sh-eml-btn-hint-visible {
+  display: flex;
+}
+
+.sh-eml-btn-hint-icon {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #c43636;
+  flex-shrink: 0;
+  position: relative;
+}
+
+/* CSS-drawn "!" inside the red circle */
+.sh-eml-btn-hint-icon::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 3px;
+  width: 2px;
+  height: 5px;
+  background: #ffffff;
+  border-radius: 1px;
+}
+
+.sh-eml-btn-hint-icon::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 10px;
+  width: 2px;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 50%;
+}
+
+
+/* -------------------- Icon positioning --------------------------------- */
+/* The Universal Theme positions .apex-item-icon relative to
+   .t-Form-itemWrapper. Our own wrapper sits in between, so the icon
+   would otherwise be placed against the wrapper's full height (which
+   includes the popover element). !important is needed because the
+   theme's own rule for this class is more specific. */
+.sh-eml-wrapper .apex-item-icon {
+  position: absolute !important;
+  left: 0px !important;
+  top: 50% !important;
+  bottom: auto !important;
+  right: auto !important;
+  transform: translateY(-50%) !important;
+  margin: 0 !important;
+  pointer-events: none;
+  z-index: 2;
+  line-height: 1;
+}
+
+/* The wrapper must only be as tall as the input itself, so "top: 50%"
+   centers on the field - the popover is position:fixed and therefore
+   doesn't add height, but this makes the intent explicit. */
+.sh-eml-wrapper {
+  line-height: 0;
+}
+
+.sh-eml-wrapper .sh-eml-input {
+  line-height: normal;
+}
+
+
+/* Verhindert, dass das UT den Icon-Container beim Fokussieren
+   des Inputs zusätzlich blau einfärbt - Icon behält immer
+   seine normale/unfokussierte Optik. */
+.t-Form-inputContainer.is-focused .apex-item-icon,
+.apex-item-icon-container.is-focused .apex-item-icon {
+  background-color: inherit !important;
+  color: inherit !important;
+  filter: none !important;
+}
+
+.sh-eml-wrapper .apex-item-icon {
+  height: 100% !important;
+}

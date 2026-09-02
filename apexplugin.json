@@ -1,0 +1,34 @@
+{
+  "name": "Email Validator",
+  "version": "3.3.0",
+  "description": "Oracle APEX item type plugin that replaces the native Email item with live rule validation in a popover, configurable structure, pattern, length and domain rules, and an optional button that stays disabled until the address is valid.",
+  "keywords": ["item type plugin", "email", "email validation", "email validator", "domain whitelist", "disposable email", "form validation", "oracle apex"],
+  "homepage": "https://github.com/Sajjad-786/apex-email-validator",
+  "bugs": {
+    "url": "https://github.com/Sajjad-786/apex-email-validator/issues",
+    "email": "<CONTACT-EMAIL>"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Sajjad Hanifa",
+    "company": "S&H Software Solution",
+    "email": "<CONTACT-EMAIL>",
+    "url": "https://www.apexnote.de/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sajjad-786/apex-email-validator"
+  },
+  "oracle": {
+    "versions": ["19c", "21c", "23ai"],
+    "apex": {
+      "versions": ["23.2"],
+      "plugin": {
+        "internalName": "EMAIL_VALIDATOR",
+        "type": "item",
+        "demo": "<PUBLIC-DEMO-URL>",
+        "previewImage": "https://raw.githubusercontent.com/Sajjad-786/apex-email-validator/main/screenshots/email-validator-preview.jpg"
+      }
+    }
+  }
+}

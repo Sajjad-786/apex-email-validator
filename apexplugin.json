@@ -26,6 +26,7 @@
       "plugin" : {
         "internalName" : "EMAIL_VALIDATOR",
         "type" : "item",
+        "demo" : "https://app.apexnote.de/ords/r/apexnote_prod/apex-email-validator/",
         "previewImage" : "https://raw.githubusercontent.com/Sajjad-786/apex-email-validator/main/screenshots/email-validator-preview.jpg"
       }
     }
